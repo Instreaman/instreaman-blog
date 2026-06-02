@@ -1,0 +1,24 @@
+Instreaman's Blog
+Copyright 2026 Instreaman
+
+This project is based on Mizuki (https://github.com/LyraVoid/Mizuki)
+Copyright 2025 Matsuzaka Yuki
+
+Mizuki is licensed under the Apache License 2.0.
+
+---
+
+This project also includes portions of Fuwari (https://github.com/saicaca/fuwari)
+Copyright (c) 2024 saicaca
+
+Fuwari is licensed under the MIT License.
+See LICENSE.MIT for the full license text.
+
+---
+
+Modifications made by Instreaman include:
+- Custom site configuration and branding
+- Personalized content and styling
+- Additional features and integrations
+
+All modifications are also licensed under the Apache License 2.0.
