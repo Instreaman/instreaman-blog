@@ -142,7 +142,7 @@ export const navBarConfig: NavBarConfig = {
 				{
 					name: "GitHub",
 					url: "https://github.com/LyraVoid/Mizuki",
-					external: true, // 外部链接，新标签页打开
+					external: true,
 					icon: "fa7-brands:github",
 				},
 				{
@@ -156,6 +156,12 @@ export const navBarConfig: NavBarConfig = {
 					url: "https://gitee.com/matsuzakayuki/Mizuki",
 					external: true,
 					icon: "mdi:git",
+				},
+				{
+					name: "Discord",
+					url: "https://discord.gg/MqW6TcQtVM",
+					external: true,
+					icon: "fa7-brands:discord",
 				},
 			],
 		},
