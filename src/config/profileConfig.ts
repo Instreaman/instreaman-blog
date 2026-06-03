@@ -40,5 +40,15 @@ export const profileConfig: ProfileConfig = {
       icon: "fa7-brands:telegram",
       url: "https://t.me/EvanInstris",
     },
+    {
+      name: "Email",
+      icon: "fa7-solid:envelope",
+      url: "mailto:instreaman@gmail.com",
+    },
+    {
+      name: "Email",
+      icon: "fa7-solid:envelope",
+      url: "mailto:evaninstis@proton.me",
+    },
   ],
 };
