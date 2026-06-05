@@ -41,14 +41,14 @@ export const profileConfig: ProfileConfig = {
       url: "https://t.me/EvanInstris",
     },
     {
-      name: "Email",
-      icon: "fa7-solid:envelope",
-      url: "mailto:instreaman@gmail.com",
+      name: "Steam",
+      icon: "fa7-brands:steam",
+      url: "https://steamcommunity.com/id/instreaman",
     },
     {
-      name: "Email",
+      name: "Gmail",
       icon: "fa7-solid:envelope",
-      url: "mailto:evaninstis@proton.me",
+      url: "mailto:instreaman@gmail.com",
     },
   ],
 };
