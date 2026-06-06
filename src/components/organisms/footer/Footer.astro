@@ -3,7 +3,6 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 
 import { footerConfig, profileConfig } from "../../../config";
-import { url } from "../../../utils/url-utils";
 
 const currentYear = new Date().getFullYear();
 
@@ -34,62 +33,46 @@ if (footerConfig.enable) {
 		}
 	}
 }
+
+const version = footerConfig.version || "9.0";
 ---
 
-<!--<div class="border-t border-[var(--primary)] mx-16 border-dashed py-8 max-w-[var(--page-width)] flex flex-col items-center justify-center px-6">-->
 <div
-	class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"
+	class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-8 md:mx-32"
 >
 </div>
-<!--<div class="transition bg-[oklch(92%_0.01_var(--hue))] dark:bg-black rounded-2xl py-8 mt-4 mb-8 flex flex-col items-center justify-center px-6">-->
 <div
-	class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6"
+	class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-4 md:px-6"
 >
 	<div class="transition text-50 text-sm text-center">
 		{customFooterHtml && <div class="mb-2" set:html={customFooterHtml} />}
 
 		<div class="mb-2">
 			&copy; <span id="copyright-year">{currentYear}</span>
-			{profileConfig.name}. All Rights Reserved. /
-			<a
-				class="transition link text-[var(--primary)] font-medium"
-				href={url("rss/")}
-				onclick={`event.preventDefault(); navigateToPage('${url("rss/")}')`}
-				>RSS</a
-			> /
-			<a
-				class="transition link text-[var(--primary)] font-medium"
-				href={url("atom/")}
-				onclick={`event.preventDefault(); navigateToPage('${url("atom/")}')`}
-				>Atom</a
-			> /
-			<a
-				class="transition link text-[var(--primary)] font-medium"
-				target="_blank"
-				href={url("sitemap-index.xml")}>Sitemap</a
-			> /
-			<a
-				class="transition link text-[var(--primary)] font-medium"
-				target="_blank"
-				href="https://icp.gov.moe/?keyword=20260106">萌ICP备20260106号</a
-			>
+			{profileConfig.name}
 		</div>
 
-		<div>
+		{footerConfig.icp?.enable && (
+			<div class="mb-2">
+				<a
+					class="transition link text-[var(--primary)] font-medium"
+					target="_blank"
+					href={footerConfig.icp.link}>{footerConfig.icp.text}</a
+				>
+			</div>
+		)}
+
+		<div class="text-xs opacity-60">
 			Powered by
 			<a
-				class="transition link text-[var(--primary)] font-medium"
+				class="transition link text-[var(--primary)]"
 				target="_blank"
 				href="https://astro.build">Astro</a
 			> &
 			<a
-				class="transition link text-[var(--primary)] font-medium"
+				class="transition link text-[var(--primary)]"
 				target="_blank"
-				href="https://github.com/LyraVoid/Mizuki">Mizuki</a
-			>&nbsp; Version <a
-				class="transition link text-[var(--primary)] font-medium"
-				target="_blank"
-				href="https://github.com/LyraVoid/Mizuki">9.0</a
+				href="https://github.com/LyraVoid/Mizuki">Mizuki v{version}</a
 			>
 		</div>
 	</div>

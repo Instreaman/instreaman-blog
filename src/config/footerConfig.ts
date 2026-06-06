@@ -7,4 +7,10 @@ export const footerConfig: FooterConfig = {
 	// 也可以直接编辑 FooterConfig.html 文件来添加备案号等自定义内容
 	// 注意：若 customHtml 不为空，则使用 customHtml 中的内容；若 customHtml 留空，则使用 FooterConfig.html 文件中的内容
 	// FooterConfig.html 可能会在未来的某个版本弃用
+	icp: {
+		enable: true, // 是否显示备案号
+		text: "萌ICP备20260106号", // 备案号文本
+		link: "https://icp.gov.moe/?keyword=20260106", // 备案号链接
+	},
+	version: "9.0", // 主题版本号
 };

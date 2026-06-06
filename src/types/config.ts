@@ -362,6 +362,12 @@ export interface MusicPlayerConfig {
 export interface FooterConfig {
 	enable: boolean; // 是否启用Footer HTML注入功能
 	customHtml?: string; // 自定义HTML内容，用于添加备案号等信息
+	icp?: {
+		enable: boolean; // 是否显示备案号
+		text: string; // 备案号文本
+		link: string; // 备案号链接
+	};
+	version?: string; // 主题版本号，如 "9.0"
 }
 
 // 组件配置类型定义

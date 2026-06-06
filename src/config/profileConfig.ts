@@ -50,5 +50,15 @@ export const profileConfig: ProfileConfig = {
       icon: "fa7-solid:envelope",
       url: "mailto:instreaman@gmail.com",
     },
+    {
+      name: "RSS",
+      icon: "mdi:rss",
+      url: "/rss/",
+    },
+    {
+      name: "Atom",
+      icon: "mdi:atom",
+      url: "/atom/",
+    },
   ],
 };
