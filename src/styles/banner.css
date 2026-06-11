@@ -309,7 +309,7 @@ body.wallpaper-transparent #toc-inner-wrapper:has(table-of-contents[data-loaded=
 .banner-image-slot-mobile img,
 .banner-image-slot-desktop img,
 #banner img {
-  object-position: center center !important;
+  object-position: center top !important;
   pointer-events: none;
   -webkit-user-drag: none;
   user-drag: none;
