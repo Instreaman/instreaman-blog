@@ -1,57 +1,57 @@
 ---
-title: Markdown Tutorial
+title: Markdown 教程
 published: 2025-01-20
 pinned: true
-description: A simple example of a Markdown blog post.
-tags: [Markdown, Blogging]
-category: Examples
-licenseName: "Unlicensed"
+description: 一个简单的 Markdown 博客文章示例。
+tags: [Markdown, 博客]
+category: 示例
+licenseName: "未许可"
 author: emn178
 sourceLink: "https://github.com/emn178/markdown"
 draft: false
 ---
 
-# Markdown Tutorial
+# Markdown 教程
 
-A markdown example shows how to write a markdown file. This document integrates core syntax and extensions (GMF).
+一个 Markdown 示例展示如何编写 Markdown 文件。本文档集成了核心语法和扩展（GFM）。
 
-- [Block Elements](#block-elements)
-  - [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
-  - [Headers](#headers)
-  - [Blockquotes](#blockquotes)
-  - [Lists](#lists)
-  - [Code Blocks](#code-blocks)
-  - [Horizontal Rules](#horizontal-rules)
-  - [Table](#table)
-- [Span Elements](#span-elements)
-  - [Links](#links)
-  - [Emphasis](#emphasis)
-  - [Code](#code)
-  - [Images](#images)
-  - [Strikethrough](#strikethrough)
-- [Miscellaneous](#miscellaneous)
-  - [Automatic Links](#automatic-links)
-  - [Backslash Escapes](#backslash-escapes)
-- [Inline HTML](#inline-html)
+- [块元素](#块元素)
+  - [段落和换行](#段落和换行)
+  - [标题](#标题)
+  - [引用](#引用)
+  - [列表](#列表)
+  - [代码块](#代码块)
+  - [水平线](#水平线)
+  - [表格](#表格)
+- [行内元素](#行内元素)
+  - [链接](#链接)
+  - [强调](#强调)
+  - [代码](#代码)
+  - [图片](#图片)
+  - [删除线](#删除线)
+- [其他](#其他)
+  - [自动链接](#自动链接)
+  - [反斜杠转义](#反斜杠转义)
+- [行内 HTML](#行内-html)
 
-## Block Elements
+## 块元素
 
-### Paragraphs and Line Breaks
+### 段落和换行
 
-#### Paragraphs
+#### 段落
 
-HTML Tag: `<p>`
+HTML 标签: `<p>`
 
-One or more blank lines. (A blank line is a line containing nothing but **spaces** or **tabs** is considered blank.)
+一个或多个空行。（仅包含**空格**或**制表符**的行被视为空白行。）
 
-Code:
+代码：
 
     This will be
     inline.
 
     This is second paragraph.
 
-Preview:
+预览：
 
 ---
 
@@ -62,11 +62,11 @@ This is second paragraph.
 
 ---
 
-#### Line Breaks
+#### 换行
 
-HTML Tag: `<br />`
+HTML 标签: `<br />`
 
-End a line with **two or more spaces**.
+行末尾添加**两个或多个空格**。
 
 Code:
 
@@ -962,9 +962,9 @@ This is another regular paragraph.
 
 ---
 
-Note that Markdown formatting syntax is **not processed within block-level HTML tags**.
+请注意，Markdown 格式化语法在块级 HTML 标签内**不会被处理**。
 
-Unlike block-level HTML tags, Markdown syntax is **processed within span-level tags**.
+与块级 HTML 标签不同，Markdown 语法在行内级标签中**会被处理**。
 
 Code:
 
