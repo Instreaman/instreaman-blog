@@ -21,6 +21,13 @@ pnpm-debug.log*
 
 # content repository (independent mode)
 /content/
+src/content/posts/draft.md
+src/content/posts/encrypted-post.md
+src/content/posts/guide/index.md
+src/content/posts/markdown-extended.md
+src/content/posts/markdown-mermaid.md
+src/content/posts/markdown-tutorial.md
+src/content/posts/video.md
 *.backup
 
 # Large zip files
