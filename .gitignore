@@ -44,6 +44,11 @@ yarn.lock
 .claude-*
 CLAUDE.md
 
+# Codex/agent related files
+.codex/
+.agents/
+AGENTS.md
+
 cache/
 fuwari/
 src/data/myself.ts
