@@ -11,10 +11,8 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 			"/assets/desktop-banner/lantern-festival-moon.webp",
 		],
 		mobile: [
-			"/assets/mobile-banner/1.webp",
-			"/assets/mobile-banner/2.webp",
-			"/assets/mobile-banner/3.webp",
-			"/assets/mobile-banner/4.webp",
+			"/assets/mobile-banner/umbrella-miku.webp",
+			"/assets/mobile-banner/blue-bamboo-girl.webp",
 		],
 	},
 	position: "center",

@@ -116,10 +116,8 @@ export const siteConfig: SiteConfig = {
         "/assets/desktop-banner/lantern-festival-moon.webp",
       ], // 桌面横幅图片
       mobile: [
-        "/assets/mobile-banner/1.webp",
-        "/assets/mobile-banner/2.webp",
-        "/assets/mobile-banner/3.webp",
-        "/assets/mobile-banner/4.webp",
+        "/assets/mobile-banner/umbrella-miku.webp",
+        "/assets/mobile-banner/blue-bamboo-girl.webp",
       ], // 移动横幅图片
     }, // 使用本地横幅图片
 
