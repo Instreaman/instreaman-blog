@@ -16,6 +16,69 @@ function readSiteConfig() {
 }
 
 /**
+ * 按属性名提取对象内容，不依赖 Biome 使用 tab 还是 space 缩进。
+ * 简单正则会在第一个嵌套对象的 `},` 处提前结束。
+ */
+function extractObjectBody(content, propertyName) {
+	const propertyMatch = new RegExp(`${propertyName}:\\s*\\{`).exec(content);
+	if (!propertyMatch) return null;
+
+	const openingBrace = content.indexOf("{", propertyMatch.index);
+	let depth = 0;
+	let quote = null;
+	let escaped = false;
+	let lineComment = false;
+	let blockComment = false;
+
+	for (let i = openingBrace; i < content.length; i++) {
+		const char = content[i];
+		const next = content[i + 1];
+
+		if (lineComment) {
+			if (char === "\n") lineComment = false;
+			continue;
+		}
+		if (blockComment) {
+			if (char === "*" && next === "/") {
+				blockComment = false;
+				i++;
+			}
+			continue;
+		}
+		if (quote) {
+			if (escaped) {
+				escaped = false;
+			} else if (char === "\\") {
+				escaped = true;
+			} else if (char === quote) {
+				quote = null;
+			}
+			continue;
+		}
+		if (char === "/" && next === "/") {
+			lineComment = true;
+			i++;
+			continue;
+		}
+		if (char === "/" && next === "*") {
+			blockComment = true;
+			i++;
+			continue;
+		}
+		if (char === '"' || char === "'" || char === "`") {
+			quote = char;
+			continue;
+		}
+		if (char === "{") depth++;
+		if (char === "}" && --depth === 0) {
+			return content.slice(openingBrace + 1, i);
+		}
+	}
+
+	return null;
+}
+
+/**
  * 提取语言设置
  */
 export function getLang() {
@@ -30,13 +93,12 @@ export function getLang() {
 export function getFontConfigs() {
 	const content = readSiteConfig();
 
-	const fontConfigMatch = content.match(/font:\s*\{([\s\S]*?)\n\t\},/);
-	if (!fontConfigMatch) {
+	const fontConfigStr = extractObjectBody(content, "font");
+	if (!fontConfigStr) {
 		console.log("⚠ Font config not found, using default settings");
 		return [];
 	}
 
-	const fontConfigStr = fontConfigMatch[1];
 	const fonts = [];
 	const fontTypes = ["asciiFont", "cjkFont"];
 
