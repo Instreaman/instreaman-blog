@@ -209,6 +209,7 @@ const bannerFormats = getImageFormats();
 						mobileImg.loading = "eager";
 						mobileImg.fetchPriority = "high";
 						mobileImg.dataset.position = position;
+						mobileImg.style.objectPosition = position;
 						container.appendChild(mobileImg);
 					}
 
@@ -222,6 +223,7 @@ const bannerFormats = getImageFormats();
 						desktopImg.loading = "eager";
 						desktopImg.fetchPriority = "high";
 						desktopImg.dataset.position = position;
+						desktopImg.style.objectPosition = position;
 						container.appendChild(desktopImg);
 					}
 				})();
