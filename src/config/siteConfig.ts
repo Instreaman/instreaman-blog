@@ -147,15 +147,15 @@ export const siteConfig: SiteConfig = {
 
     homeText: {
       enable: true,
-      title: "Instreamanの小窝",
+      title: "Instreaman 的小窩",
       switchable: true,
 
       subtitle: [
-        "特別なことはないけど、君がいると十分です",
-        "今でもあなたは私の光",
-        "君ってさ、知らないうちに私の毎日になってたよ",
-        "君と話すと、なんか毎日がちょっと楽しくなるんだ",
-        "今日はなんでもない日。でも、ちょっとだけいい日",
+        "沒有什麼特別的事，但有你就足夠了",
+        "直到現在，你依然是我的光",
+        "不知不覺間，你已經成了我的日常",
+        "和你聊天，總覺得每天都變得有趣了一點",
+        "今天是平凡的一天，卻也是稍微美好的一天",
       ],
       typewriter: {
         enable: true, // 启用副标题打字机效果
@@ -183,7 +183,7 @@ export const siteConfig: SiteConfig = {
     desktopSidebar: true, // 电脑端右侧边栏 TOC
     floating: true, // 悬浮 TOC 按钮
     depth: 2, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
-    useJapaneseBadge: true, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
+    useJapaneseBadge: false, // 使用数字目录标记，避免显示日语假名
   },
   showCoverInContent: true, // 在文章内容页显示文章封面
   generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启

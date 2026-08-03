@@ -4,7 +4,7 @@ import type { ProfileConfig } from "../types/config";
 export const profileConfig: ProfileConfig = {
   avatar: "/assets/profile/avatar.webp", // 本地头像，避免依赖外部 QQ API
   name: "Instreaman",
-  bio: "世界は大きい、君は行かなければならない",
+  bio: "世界很大，你一定要去看看",
   typewriter: {
     enable: true, // 启用个人简介打字机效果
     speed: 80, // 打字速度（毫秒）
