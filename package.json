@@ -4,6 +4,8 @@
 	"version": "9.0",
 	"scripts": {
 		"sync-content": "node scripts/sync-content.js",
+		"sync-notes": "node scripts/sync-notes.js",
+		"test:sync-notes": "node --test tests/sync-notes.test.mjs",
 		"init-content": "node scripts/init-content-repo.js",
 		"predev": "node scripts/sync-content.js || true",
 		"prebuild": "node scripts/sync-content.js || true",
