@@ -24,7 +24,7 @@ export const siteConfig: SiteConfig = {
     friends: true, // 友链页面开关
     projects: true, // 项目页面开关
     skills: true, // 技能页面开关
-    timeline: true, // 时间线页面开关
+    timeline: false, // 保留时间线源码与数据，但不在网站中公开
     albums: true, // 相册页面开关
     devices: true, // 设备页面开关
   },
@@ -109,9 +109,11 @@ export const siteConfig: SiteConfig = {
     // 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
     src: {
       desktop: [
-        "/assets/desktop-banner/mountain-cat-walk.webp",
         "/assets/desktop-banner/rainy-greenhouse-miku.webp",
         "/assets/desktop-banner/forest-rice-fields.webp",
+        "/assets/desktop-banner/sunlit-garden-girl.webp",
+        "/assets/desktop-banner/peach-blossom-tea.webp",
+        "/assets/desktop-banner/lantern-festival-moon.webp",
       ], // 桌面横幅图片
       mobile: [
         "/assets/mobile-banner/1.webp",

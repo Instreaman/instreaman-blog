@@ -4,9 +4,11 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	enable: true,
 	src: {
 		desktop: [
-			"/assets/desktop-banner/mountain-cat-walk.webp",
 			"/assets/desktop-banner/rainy-greenhouse-miku.webp",
 			"/assets/desktop-banner/forest-rice-fields.webp",
+			"/assets/desktop-banner/sunlit-garden-girl.webp",
+			"/assets/desktop-banner/peach-blossom-tea.webp",
+			"/assets/desktop-banner/lantern-festival-moon.webp",
 		],
 		mobile: [
 			"/assets/mobile-banner/1.webp",
