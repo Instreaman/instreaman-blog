@@ -143,8 +143,8 @@ const renderGroups = [
 							data-carousel-item={index}
 							style={`transform: translateZ(0); backface-visibility: hidden; will-change: opacity; opacity: ${index === 0 ? 1 : 0};`}
 							decoding="async"
-							loading={index === 0 ? "eager" : "lazy"}
-							fetchpriority={index === 0 ? "high" : undefined}
+							loading="lazy"
+							fetchpriority="low"
 					/>
 				))}
 			</div>
@@ -184,8 +184,8 @@ const renderGroups = [
 								class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}"
 								style="transform: translateZ(0); backface-visibility: hidden; will-change: opacity; opacity: 1;"
 								decoding="async"
-								loading="eager"
-								fetchpriority="high"
+								loading="lazy"
+								fetchpriority="low"
 							/>
 						`;
 						container.appendChild(desktopDiv);
@@ -202,8 +202,8 @@ const renderGroups = [
 								class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${positionClass}"
 								style="transform: translateZ(0); backface-visibility: hidden; will-change: opacity; opacity: 1;"
 								decoding="async"
-								loading="eager"
-								fetchpriority="high"
+								loading="lazy"
+								fetchpriority="low"
 							/>
 						`;
 						container.appendChild(mobileDiv);

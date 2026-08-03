@@ -60,7 +60,7 @@ const isRight = config.position === "right";
 
 <iframe
 	id="l2d-iframe"
-	src="/pio/live2d-host.html"
+	data-src="/pio/live2d-host.html"
 	allowtransparency="true"
 	style={"position: fixed; z-index: 999; pointer-events: none; border: none; bottom: 0;"
 		+ (isRight ? " right: 0;" : " left: 0;")
@@ -116,10 +116,30 @@ const isRight = config.position === "right";
 			let currentConfigKey = "";
 			let pendingInit: number | undefined;
 			let swupHooksRegistered = false;
+			let interactionDetected = false;
+
+			function isHiddenOnCurrentViewport() {
+				return currentHiddenOnMobile && window.innerWidth <= 1280;
+			}
+
+			function loadFrame() {
+				if (!currentEl || !interactionDetected || isHiddenOnCurrentViewport()) {
+					return;
+				}
+				const src = currentEl.dataset.src;
+				if (src && !currentEl.getAttribute("src")) {
+					currentEl.src = src;
+				}
+			}
+
+			function handleFirstInteraction() {
+				interactionDetected = true;
+				loadFrame();
+			}
 
 			function applyVisibility() {
 				if (!currentEl) return;
-				if (currentHiddenOnMobile && window.innerWidth <= 1280) {
+				if (isHiddenOnCurrentViewport()) {
 					currentEl.style.display = "none";
 				} else {
 					currentEl.style.display = "";
@@ -128,7 +148,9 @@ const isRight = config.position === "right";
 
 			function postInit() {
 				if (!currentEl || initSent || isTransitioning) return;
-				if (currentHiddenOnMobile && window.innerWidth <= 1280) return;
+				if (isHiddenOnCurrentViewport() || !currentEl.getAttribute("src")) {
+					return;
+				}
 				currentEl.contentWindow?.postMessage(
 					{ type: "l2d-init", config: currentConfig },
 					"*",
@@ -187,8 +209,15 @@ const isRight = config.position === "right";
 			window.addEventListener("message", handleMessage);
 			window.addEventListener("resize", () => {
 				applyVisibility();
+				loadFrame();
 				scheduleInit();
 			});
+			for (const eventName of ["scroll", "click", "touchstart", "keydown"]) {
+				window.addEventListener(eventName, handleFirstInteraction, {
+					once: true,
+					passive: true,
+				});
+			}
 
 			if (window.swup) {
 				setupSwupHooks();
@@ -216,7 +245,11 @@ const isRight = config.position === "right";
 						});
 					}
 					applyVisibility();
-					if (nextEl.contentDocument?.readyState === "complete") {
+					loadFrame();
+					if (
+						nextEl.getAttribute("src") &&
+						nextEl.contentDocument?.readyState === "complete"
+					) {
 						scheduleInit();
 					}
 				},

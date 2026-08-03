@@ -2,7 +2,7 @@ import type { ProfileConfig } from "../types/config";
 
 // 个人资料配置
 export const profileConfig: ProfileConfig = {
-  avatar: "https://q1.qlogo.cn/g?b=qq&nk=2804914560&s=640", // QQ头像API
+  avatar: "/assets/profile/avatar.webp", // 本地头像，避免依赖外部 QQ API
   name: "Instreaman",
   bio: "世界は大きい、君は行かなければならない",
   typewriter: {
