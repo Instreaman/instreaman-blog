@@ -91,7 +91,7 @@ const bannerFormats = getImageFormats();
 			data-carousel-interval={carouselIntervalMs}
 			data-fade-ms={fadeMs}
 		>
-			{/* 移动端：第一张图直接渲染，其余放入 template 延迟加载 */}
+			{/* 两端首图使用 lazy，避免 CSS 隐藏的另一端图片仍抢占首屏带宽 */}
 			{mobileImages.length > 0 && (
 				<div class="banner-image-slot-mobile absolute inset-0 block md:hidden">
 					<Image
@@ -101,8 +101,7 @@ const bannerFormats = getImageFormats();
 						position={siteConfig.banner.position}
 						widths={[640, 1024, 1536]}
 						sizes="100vw"
-						loading="eager"
-						fetchpriority="high"
+						loading="lazy"
 						quality={bannerMobileQuality}
 						formats={bannerFormats}
 					/>
@@ -117,15 +116,15 @@ const bannerFormats = getImageFormats();
 						position={siteConfig.banner.position}
 						widths={[640, 1024, 1536]}
 						sizes="100vw"
-						loading="eager"
-						fetchpriority="high"
+						loading="lazy"
+						fetchpriority="low"
 						quality={bannerMobileQuality}
 						formats={bannerFormats}
 					/>
 				</template>
 			))}
 
-			{/* 桌面端：第一张图直接渲染，其余放入 template 延迟加载 */}
+			{/* 桌面端：隐藏时不主动下载，显示时因处于首屏会立即触发 lazy */}
 			{desktopImages.length > 0 && (
 				<div class="banner-image-slot-desktop absolute inset-0 hidden md:block">
 					<Image
@@ -136,8 +135,7 @@ const bannerFormats = getImageFormats();
 						position={siteConfig.banner.position}
 						widths={[1024, 1536, 2048, 2560]}
 						sizes="100vw"
-						loading="eager"
-						fetchpriority="high"
+						loading="lazy"
 						quality={bannerQuality}
 						formats={bannerFormats}
 					/>
@@ -152,8 +150,8 @@ const bannerFormats = getImageFormats();
 						position={siteConfig.banner.position}
 						widths={[1024, 1536, 2048, 2560]}
 						sizes="100vw"
-						loading="eager"
-						fetchpriority="high"
+						loading="lazy"
+						fetchpriority="low"
 						quality={bannerQuality}
 						formats={bannerFormats}
 					/>

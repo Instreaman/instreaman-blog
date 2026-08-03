@@ -34,9 +34,9 @@ export const siteConfig: SiteConfig = {
     // 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
     mode: "text-icon",
     // 顶栏标题文本
-    text: "MizukiUI",
+    text: "Instreaman",
     // 顶栏标题图标路径，默认使用 public/assets/home/home.webp
-    icon: "assets/home/home.webp",
+    icon: "assets/home/instreaman-icon.png",
     // 网站Logo图片路径
     logo: "assets/home/default-logo.webp",
   },
@@ -116,8 +116,8 @@ export const siteConfig: SiteConfig = {
         "/assets/desktop-banner/lantern-festival-moon.webp",
       ], // 桌面横幅图片
       mobile: [
-        "/assets/mobile-banner/umbrella-miku.webp",
-        "/assets/mobile-banner/blue-bamboo-girl.webp",
+        "/assets/mobile-banner/umbrella-miku-mobile-v2.webp",
+        "/assets/mobile-banner/blue-bamboo-girl-mobile-v2.webp",
       ], // 移动横幅图片
     }, // 使用本地横幅图片
 
